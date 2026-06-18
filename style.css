@@ -404,3 +404,8 @@
         .back-to-top.show {
             display: block;
         }
+ .chart-wrapper {
+            position: relative;
+            height: 400px;
+            margin-bottom: 50px;
+        }

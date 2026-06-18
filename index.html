@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
 </head>
 <body>
@@ -146,7 +147,37 @@ fetch("nav.html")
         </div>
     </section>
 
+<!-- Chart Section -->
 
+<div class="container">
+        <h1>📊 Chart.js ตัวอย่างกราฟ</h1>
+        
+        <!-- Bar Chart -->
+        <div>
+            <h2>Bar Chart - ยอดขายรายเดือน</h2>
+            <div class="chart-wrapper">
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Line Chart -->
+        <div>
+            <h2>Line Chart - แนวโน้มจำนวนผู้ใช้</h2>
+            <div class="chart-wrapper">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div>
+            <h2>Pie Chart - สัดส่วนการใช้เบราว์เซอร์</h2>
+            <div class="chart-wrapper" style="height: 350px;">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+     
 
     <!-- Detail Modal -->
     <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
@@ -302,6 +333,105 @@ fetch("footer.html")
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+    </script>
+        <script>
+        // Bar Chart
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน'],
+                datasets: [{
+                    label: 'ยอดขาย (บาท)',
+                    data: [65000, 59000, 80000, 81000, 56000, 85000],
+                    backgroundColor: 'rgba(102, 126, 234, 0.6)',
+                    borderColor: 'rgba(102, 126, 234, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Line Chart
+        const lineCtx = document.getElementById('lineChart').getContext('2d');
+        new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: ['สัปดาห์ที่ 1', 'สัปดาห์ที่ 2', 'สัปดาห์ที่ 3', 'สัปดาห์ที่ 4', 'สัปดาห์ที่ 5'],
+                datasets: [{
+                    label: 'จำนวนผู้ใช้',
+                    data: [120, 190, 150, 220, 280],
+                    borderColor: 'rgba(118, 75, 162, 1)',
+                    backgroundColor: 'rgba(118, 75, 162, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Pie Chart
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Chrome', 'Firefox', 'Safari', 'Edge'],
+                datasets: [{
+                    data: [300, 150, 100, 80],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
         });
     </script>
 </body>
