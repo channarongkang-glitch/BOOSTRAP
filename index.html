@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน่วยงานราชการ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://backoffice.krph.go.th/e-service/images/md.ico">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+   
+<div id="nav_bar"></div>
+
+<script>
+fetch("nav.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("nav_bar").innerHTML = html;
+  });
+</script>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 hero-text">
+                    <h1>ยินดีต้อนรับสู่การเรียนรู้ Git Hub Copilot</h1>
+                    <p>
+                        GitHub Copilot เป็นผู้ช่วยเขียนโค้ดด้วย AI ที่ทำงานภายใน IDE เช่น VS Code โดยสามารถ
+
+แนะนำโค้ดอัตโนมัติ ,สร้างฟังก์ชันจากคำอธิบาย,อธิบายโค้ด,แก้ไขข้อผิดพลาด,สร้าง Unit Test,Refactor โค้ด,สร้างเอกสารประกอบโค้ด 
+
+                    </p>
+                    <button class="btn btn-hero"><i class="fas fa-arrow-right"></i> เรียนรู้เพิ่มเติม</button>
+                </div>
+                <div class="col-lg-5 hero-image">
+                    <img src="https://img.magnific.com/free-vector/ai-technology-microchip-background-vector-digital-transformation-concept_53876-112222.jpg" alt="AI Technology">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Cards Section -->
+    <section class="card-section" id="services">
+        <div class="container">
+            <h2><i class="fas fa-star"></i> บริการของเรา</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <i class="fas fa-book"></i>
+                        <h5>ให้ข้อมูลข่าวสาร</h5>
+                        <p>ให้บริการข้อมูลข่าวสารและเอกสารต่างๆ ของหน่วยงาน อย่างรวดเร็วและมีประสิทธิภาพ</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <i class="fas fa-handshake"></i>
+                        <h5>ให้คำปรึกษา</h5>
+                        <p>ให้คำปรึกษาและแนวทางในการแก้ไขปัญหาต่างๆ ที่เกี่ยวข้องกับการบริหารงาน</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <i class="fas fa-laptop"></i>
+                        <h5>ระบบดิจิทัล</h5>
+                        <p>ให้บริการระบบดิจิทัลที่ทันสมัยเพื่อความสะดวกในการติดต่อหน่วยงาน</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h5>ติดตามผลการทำงาน</h5>
+                        <p>ติดตามและรายงานผลการทำงานอย่างโปร่งใสเพื่อความน่าเชื่อถือ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Table Section -->
+    <section class="table-section" id="about" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <h2 data-aos="zoom-in" data-aos-duration="800"><i class="fas fa-table"></i> ข้อมูลสำคัญ</h2>
+            <div class="table-container" data-aos="flip-left" data-aos-duration="1200">
+                <table class="table table-hover" id="dataTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-hashtag"></i> ลำดับที่</th>
+                            <th><i class="fas fa-user"></i> ชื่องาน</th>
+                            <th><i class="fas fa-briefcase"></i> แผนก</th>
+                            <th><i class="fas fa-phone"></i> เบอร์ติดต่อ</th>
+                            <th><i class="fas fa-envelope"></i> อีเมล</th>
+                            <th><i class="fas fa-star"></i> สถานะ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>นายสมชาย ดำเนิน</td>
+                            <td>บริหารทั่วไป</td>
+                            <td>0-2000-0001</td>
+                            <td>somchai@org.com</td>
+                            <td><span class="badge bg-success">ทำงาน</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>นางสาวสมหญิง วิทยา</td>
+                            <td>สารสนเทศ</td>
+                            <td>0-2000-0002</td>
+                            <td>somying@org.com</td>
+                            <td><span class="badge bg-success">ทำงาน</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>นายวิชาย บุญชม</td>
+                            <td>การเงิน</td>
+                            <td>0-2000-0003</td>
+                            <td>wichai@org.com</td>
+                            <td><span class="badge bg-success">ทำงาน</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>นางสิริ สร้างสุข</td>
+                            <td>บุคลากร</td>
+                            <td>0-2000-0004</td>
+                            <td>siri@org.com</td>
+                            <td><span class="badge bg-warning">ลาศึกษา</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>นายกิจ ศรีสวัสดิ์</td>
+                            <td>ยุติธรรม</td>
+                            <td>0-2000-0005</td>
+                            <td>kit@org.com</td>
+                            <td><span class="badge bg-success">ทำงาน</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Detail Modal -->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalLabel"><i class="fas fa-user-circle"></i> รายละเอียดข้อมูล</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="info-group">
+                                <div class="info-label"><i class="fas fa-hashtag"></i> ลำดับที่</div>
+                                <div class="info-value" id="modalId">-</div>
+                            </div>
+                            <div class="info-group">
+                                <div class="info-label"><i class="fas fa-user"></i> ชื่อ-สกุล</div>
+                                <div class="info-value" id="modalName">-</div>
+                            </div>
+                            <div class="info-group">
+                                <div class="info-label"><i class="fas fa-phone"></i> เบอร์ติดต่อ</div>
+                                <div class="info-value" id="modalPhone">-</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-group">
+                                <div class="info-label"><i class="fas fa-briefcase"></i> แผนก</div>
+                                <div class="info-value" id="modalDept">-</div>
+                            </div>
+                            <div class="info-group">
+                                <div class="info-label"><i class="fas fa-envelope"></i> อีเมล</div>
+                                <div class="info-value" id="modalEmail">-</div>
+                            </div>
+                            <div class="info-group">
+                                <div class="info-label"><i class="fas fa-star"></i> สถานะ</div>
+                                <div class="info-value" id="modalStatus">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border-top: 2px solid #e0e0e0;">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("footer").innerHTML = html;
+  });
+</script>
+
+      <!--  <div class="container">
+            <p>&copy; 2566 หน่วยงานราชการ | สงวนลิขสิทธิ์ทั้งหมด</p>
+        </div>
+        -->
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: false,
+                mirror: true
+            });
+
+            $('#dataTable').DataTable({
+                language: {
+                    "sProcessing": "กำลังประมวลผล...",
+                    "sLengthMenu": "แสดง _MENU_ รายการ",
+                    "sZeroRecords": "ไม่พบข้อมูล",
+                    "sInfo": "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+                    "sInfoEmpty": "แสดง 0 ถึง 0 จาก 0 รายการ",
+                    "sInfoFiltered": "(ค้นหาจาก _MAX_ รายการทั้งหมด)",
+                    "sSearch": "ค้นหา:",
+                    "oPaginate": {
+                        "sFirst": "แรก",
+                        "sPrevious": "ก่อนหน้า",
+                        "sNext": "ถัดไป",
+                        "sLast": "สุดท้าย"
+                    }
+                },
+                responsive: true,
+                pageLength: 5
+            });
+
+            // Add click event to table rows
+            $('#dataTable tbody').on('click', 'tr', function() {
+                const row = $(this).closest('tr');
+                const cells = row.find('td');
+                
+                // Get data from table cells
+                const id = cells.eq(0).text().trim();
+                const name = cells.eq(1).text().trim();
+                const dept = cells.eq(2).text().trim();
+                const phone = cells.eq(3).text().trim();
+                const email = cells.eq(4).text().trim();
+                const status = cells.eq(5).text().trim();
+                
+                // Set modal data
+                $('#modalId').text(id);
+                $('#modalName').text(name);
+                $('#modalDept').text(dept);
+                $('#modalPhone').text(phone);
+                $('#modalEmail').text(email);
+                
+                // Set status badge
+                let statusHtml = '';
+                if(status === 'ทำงาน') {
+                    statusHtml = '<span class="status-badge" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white;">ทำงาน</span>';
+                } else if(status === 'ลาศึกษา') {
+                    statusHtml = '<span class="status-badge" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white;">ลาศึกษา</span>';
+                }
+                $('#modalStatus').html(statusHtml);
+                
+                // Show modal
+                const modal = new bootstrap.Modal(document.getElementById('detailModal'));
+                modal.show();
+            });
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
